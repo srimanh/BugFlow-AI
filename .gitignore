@@ -1,0 +1,42 @@
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+
+# IDEs
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+*.swp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment/Sensitive files
+*.env
+.env.*
+application-local.properties
+application-dev.properties
+application-prod.properties
+
+# Database
+*.h2.db
+*.mv.db
+
+# Misc
+node_modules/
+dist/
+out/
+application.properties
