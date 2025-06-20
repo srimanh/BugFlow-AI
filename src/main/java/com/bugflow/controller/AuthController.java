@@ -20,9 +20,9 @@ public class AuthController {
     }
 
     @PostMapping("/login")
-public ResponseEntity<?> login(@RequestBody User user) {
-    return userService.login(user.getEmail(), user.getPassword())
-            .<ResponseEntity<?>>map(ResponseEntity::ok)
-            .orElseGet(() -> ResponseEntity.badRequest().body("Invalid credentials"));
-}
+    public ResponseEntity<?> login(@RequestBody User loginRequest) {
+        User user = userService.login(loginRequest.getEmail(), loginRequest.getPassword());
+        if (user != null) return ResponseEntity.ok(user);
+        return ResponseEntity.status(401).body("Invalid credentials");
+    }
 }
