@@ -1,0 +1,23 @@
+meta {
+  name: AI testing
+  type: http
+  seq: 8
+}
+
+post {
+  url: http://localhost:8080/api/ai/suggest
+  body: json
+  auth: basic
+}
+
+auth:basic {
+  username: sriman@example.com
+  password: 123@456
+}
+
+body:json {
+  {
+    "description": "Login button not working on Chrome"
+  }
+  
+}
