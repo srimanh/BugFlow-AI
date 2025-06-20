@@ -1,0 +1,20 @@
+meta {
+  name: View Bugs Assigned to User
+  type: http
+  seq: 6
+}
+
+get {
+  url: http://localhost:8080/api/bugs/assigned?userId=2
+  body: none
+  auth: basic
+}
+
+params:query {
+  userId: 2
+}
+
+auth:basic {
+  username: sriman@example.com
+  password: 123@456
+}

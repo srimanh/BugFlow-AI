@@ -1,0 +1,32 @@
+meta {
+  name: Create Bug
+  type: http
+  seq: 4
+}
+
+post {
+  url: http://localhost:8080/api/bugs/create?reporterId=1
+  body: json
+  auth: basic
+}
+
+params:query {
+  reporterId: 1
+}
+
+headers {
+  Authorization:: Basic c3JpbWFuQGV4YW1wbGUuY29tOjEyM0A0NTY=
+}
+
+auth:basic {
+  username: sriman@example.com
+  password: 123@456
+}
+
+body:json {
+  {
+    "title": "Login failure on Chrome",
+    "description": "Login button not responding on latest Chrome",
+    "priority": "HIGH"
+  }
+}
