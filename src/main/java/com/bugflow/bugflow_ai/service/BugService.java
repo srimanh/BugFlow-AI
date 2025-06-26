@@ -39,4 +39,17 @@ public class BugService {
     public List<Bug> getAllBugs() {
         return bugRepository.findAll();
     }
+    public Bug assignBug(Long bugId, Long developerId) {
+        Bug bug = bugRepository.findById(bugId).orElseThrow();
+        User developer = userRepository.findById(developerId).orElseThrow();
+        bug.setAssignedTo(developer);
+        return bugRepository.save(bug);
+   }
+
+    public Bug updateBugStatus(Long bugId, String status) {
+        Bug bug = bugRepository.findById(bugId).orElseThrow();
+        bug.setStatus(status.toUpperCase());
+        return bugRepository.save(bug);
+    }
+
 }

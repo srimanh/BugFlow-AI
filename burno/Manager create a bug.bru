@@ -1,0 +1,20 @@
+meta {
+  name: Manager create a bug
+  type: http
+  seq: 4
+}
+
+put {
+  url: http://localhost:8080/api/bugs/assign?bugId=1&userId=2
+  body: none
+  auth: inherit
+}
+
+params:query {
+  bugId: 1
+  userId: 2
+}
+
+headers {
+  Authorization: Bearer  eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzcmlAZXhhbXBsZS5jb20iLCJpYXQiOjE3NTA5NjgzMzksImV4cCI6MTc1MTA1NDczOX0.ftJyomfYFv_Xg-hIXuIALm4sveyRaLK-7WAL2jE81II
+}
