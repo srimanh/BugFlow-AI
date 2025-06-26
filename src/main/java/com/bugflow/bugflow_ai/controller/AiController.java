@@ -1,0 +1,24 @@
+package com.bugflow.bugflow_ai.controller;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.bugflow.bugflow_ai.dto.AiRequest;
+import com.bugflow.bugflow_ai.dto.AiResponse;
+
+@RestController
+@RequestMapping("/api/ai")
+@CrossOrigin
+public class AiController {
+
+    @PostMapping("/suggest")
+    public ResponseEntity<AiResponse> getSuggestion(@RequestBody AiRequest request) {
+        // ✨ Mock AI logic
+        String suggestion = "🤖 Based on your description, check if the login form triggers the JS handler properly.";
+        return ResponseEntity.ok(new AiResponse(suggestion));
+    }
+}
