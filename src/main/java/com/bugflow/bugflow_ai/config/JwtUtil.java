@@ -1,9 +1,9 @@
 package com.bugflow.bugflow_ai.config;
 
-import java.util.Date;
+import java.security.Key;
 import java.util.Date;
 
-
+import javax.crypto.spec.SecretKeySpec;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
