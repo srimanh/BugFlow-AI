@@ -4,8 +4,25 @@ meta {
   seq: 3
 }
 
-get {
-  url: 
-  body: none
+post {
+  url: http://localhost:8080/api/bugs/create?reporterId=3
+  body: json
   auth: inherit
+}
+
+params:query {
+  reporterId: 3
+}
+
+headers {
+  Authorization: Bearer  eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0ZXJAZXhhbXBsZS5jb20iLCJpYXQiOjE3NTEwMjIyMTEsImV4cCI6MTc1MTEwODYxMX0.O0U6e7ro-AAtKuB2Fo9JzZ3bsGz5HjkuJhRnEA0LSdk
+}
+
+body:json {
+  {
+    "title": "Login crash on Safari",
+    "description": "App crashes on clicking login in Safari 17",
+    "priority": "HIGH"
+  }
+  
 }

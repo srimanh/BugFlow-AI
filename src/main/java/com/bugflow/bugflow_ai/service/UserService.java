@@ -22,6 +22,8 @@ public class UserService {
             throw new IllegalArgumentException("Email already exists");
         }
         user.setPassword(passwordEncoder.encode(user.getPassword()));
+        // Ensure role is stored as ROLE_MANAGER, ROLE_DEVELOPER, etc.
+        user.setRole("ROLE_" + user.getRole().toUpperCase());
         return userRepository.save(user);
     }
 

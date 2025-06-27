@@ -25,6 +25,7 @@ public class BugController {
     @Autowired
     private BugService bugService;
 
+    @PreAuthorize("hasRole('TESTER')")
     @PostMapping("/create")
     public ResponseEntity<?> createBug(@RequestBody Bug bug, @RequestParam Long reporterId) {
         return ResponseEntity.ok(bugService.createBug(bug, reporterId));
@@ -44,6 +45,7 @@ public class BugController {
     public ResponseEntity<List<Bug>> getAllBugs() {
         return ResponseEntity.ok(bugService.getAllBugs());
     }
+
     @PreAuthorize("hasRole('MANAGER')")
     @PutMapping("/assign")
     public ResponseEntity<?> assignBug(@RequestParam Long bugId, @RequestParam Long userId) {

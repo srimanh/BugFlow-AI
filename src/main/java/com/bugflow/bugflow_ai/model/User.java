@@ -23,7 +23,7 @@ public class User {
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
 
-    private String role;  // MANAGER / DEVELOPER / TESTER
+    private String role = "ROLE_TESTER"; // default, can be changed on registration
 
     // Getters and setters
     public Long getId() { return id; }
