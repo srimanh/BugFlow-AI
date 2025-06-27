@@ -29,6 +29,8 @@ public class Bug {
     private String description;
 
     private String priority; // HIGH, MEDIUM, LOW
+
+    @Column
     private String status;   // OPEN, IN_PROGRESS, FIXED, CLOSED
 
     private String aiSuggestion; // Optional
@@ -40,4 +42,13 @@ public class Bug {
     @ManyToOne
     @JoinColumn(name = "assigned_to")
     private User assignedTo;
+
+    @ManyToOne
+    @JoinColumn(name = "module_id")
+    private ProjectModule module;
+
+    // --- Add these setters manually if Lombok is not working ---
+    public void setReportedBy(User user) { this.reportedBy = user; }
+    public void setAssignedTo(User user) { this.assignedTo = user; }
+    public void setStatus(String status) { this.status = status; }
 }
