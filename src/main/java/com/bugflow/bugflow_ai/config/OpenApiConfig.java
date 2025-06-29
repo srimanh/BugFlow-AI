@@ -5,8 +5,6 @@ import org.springframework.context.annotation.Configuration;
 
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;
-import io.swagger.v3.oas.models.security.SecurityRequirement;
-import io.swagger.v3.oas.models.security.SecurityScheme;
 
 @Configuration
 public class OpenApiConfig {
@@ -14,16 +12,10 @@ public class OpenApiConfig {
     public OpenAPI customOpenAPI() {
         final String securitySchemeName = "bearerAuth";
         return new OpenAPI()
-            .info(new Info().title("Bugflow API").version("1.0"))
-            .addSecurityItem(new SecurityRequirement().addList(securitySchemeName))
-            .components(new io.swagger.v3.oas.models.Components()
-                .addSecuritySchemes(securitySchemeName,
-                    new SecurityScheme()
-                        .name(securitySchemeName)
-                        .type(SecurityScheme.Type.HTTP)
-                        .scheme("bearer")
-                        .bearerFormat("JWT")
-                )
-            );
+             .info(new Info()
+                        .title("BugFlow AI - API Docs")
+                        .version("1.0")
+                        .description("API documentation for BugFlow AI"));
+            
     }
 }

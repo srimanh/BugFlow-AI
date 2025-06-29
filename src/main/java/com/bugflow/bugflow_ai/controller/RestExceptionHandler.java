@@ -1,10 +1,9 @@
 package com.bugflow.bugflow_ai.controller;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-
-import com.bugflow.bugflow_ai.dto.ErrorResponse;
 import com.bugflow.bugflow_ai.dto.ErrorResponse;
 
 @RestControllerAdvice
