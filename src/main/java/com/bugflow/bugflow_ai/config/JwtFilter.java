@@ -19,10 +19,12 @@ public class JwtFilter extends OncePerRequestFilter {
     @Autowired private UserRepository userRepository;
 
     /** Skip public auth endpoints */
-    @Override
+@Override
 protected boolean shouldNotFilter(HttpServletRequest request) {
     String path = request.getRequestURI();
-    return path.startsWith("/api/auth");
+    return path.startsWith("/api/auth")
+        || path.startsWith("/v3/api-docs")
+        || path.startsWith("/swagger-ui");
 }
 
     @Override

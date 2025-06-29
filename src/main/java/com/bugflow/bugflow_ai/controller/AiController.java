@@ -18,7 +18,7 @@ public class AiController {
     @PostMapping("/suggest")
     public ResponseEntity<AiResponse> getSuggestion(@RequestBody AiRequest request) {
         // ✨ Mock AI logic
-        String suggestion = "🤖 Based on your description, check if the login form triggers the JS handler properly.";
+        String suggestion = "🔧 Try checking if your input validation is handled before processing the form.";
         return ResponseEntity.ok(new AiResponse(suggestion));
     }
 }
