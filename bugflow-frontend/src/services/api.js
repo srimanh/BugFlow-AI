@@ -23,3 +23,19 @@ export async function getAllBugs(token) {
     },
   }).then((res) => res.json());
 }
+
+export async function getReportedBugs(userId, token) {
+  return await fetch(`${BASE_URL}/bugs/reported?userId=${userId}`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  }).then((res) => res.json());
+}
+
+export async function getAssignedBugs(userId, token) {
+  return await fetch(`${BASE_URL}/bugs/assigned?userId=${userId}`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  }).then((res) => res.json());
+}
