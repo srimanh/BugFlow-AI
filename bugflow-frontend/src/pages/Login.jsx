@@ -13,6 +13,9 @@ function Login() {
     if (res.token) {
       localStorage.setItem("token", res.token);
       localStorage.setItem("role", res.role);
+      if (res.userId) {
+        localStorage.setItem("userId", res.userId);
+      }
       navigate("/dashboard");
     } else {
       alert("Login failed");

@@ -13,16 +13,20 @@ import jakarta.persistence.Table;
 @Table(name = "users")
 public class User {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JsonProperty("id")
     private Long id;
 
+    @JsonProperty("name")
     private String name;
 
     @Column(unique = true)
+    @JsonProperty("email")
     private String email;
 
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
 
+    @JsonProperty("role")
     private String role = "ROLE_TESTER"; // default, can be changed on registration
 
     // Getters and setters

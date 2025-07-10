@@ -5,24 +5,24 @@ meta {
 }
 
 post {
-  url: http://localhost:8080/api/bugs/create?reporterId=7
+  url: http://localhost:8080/api/bugs/create?reporterId=13
   body: json
   auth: none
 }
 
 params:query {
-  reporterId: 7
+  reporterId: 13
 }
 
 headers {
-  Authorization: Bearer  eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2huMjJAZXhhbXBsZS5jb20iLCJpYXQiOjE3NTE1NDQ3MjQsImV4cCI6MTc1MTYzMTEyNH0.zNnyzigzFSYbKUKHm-xpvpZKVTiZ5635pc9xDEQOJPw
+  Authorization: Bearer  eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0ZXIyMEBleGFtcGxlLmNvbSIsImlhdCI6MTc1MTk4MjA0NCwiZXhwIjoxNzUyMDY4NDQ0fQ.EfC6J52ZN0xnMJqvgXYHf2xGulEgQWJfHw4PHsiY7Ns
 }
 
 body:json {
   {
-    "title": "Login crash on Safari",
+    "title": "Login crash on Safari - II",
     "description": "App crashes on clicking login in Safari 17",
-    "priority": "HIGH"
+    "priority": "LOW"
   }
   
 }

@@ -41,5 +41,5 @@ public ResponseEntity<?> login(@RequestBody LoginRequest req) {
     }
     String token = jwtUtil.generateToken(user.getEmail());
     System.out.println("Token generated: " + token);
-    return ResponseEntity.ok(new AuthResponse(token, user.getRole()));
+    return ResponseEntity.ok(new AuthResponse(token, user.getRole(), user.getId()));
 }}
